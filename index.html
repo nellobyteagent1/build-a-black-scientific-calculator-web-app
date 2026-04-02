@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="calculator">
+    <div class="display">
+      <div class="expression" id="expression"></div>
+      <div class="result" id="result">0</div>
+    </div>
+    <div class="mode-bar">
+      <button class="mode-btn active" id="degBtn" onclick="toggleAngleMode('DEG')">DEG</button>
+      <button class="mode-btn" id="radBtn" onclick="toggleAngleMode('RAD')">RAD</button>
+    </div>
+    <div class="buttons">
+      <!-- Row 1: Scientific -->
+      <button class="btn sci" onclick="insertFunc('sin(')">sin</button>
+      <button class="btn sci" onclick="insertFunc('cos(')">cos</button>
+      <button class="btn sci" onclick="insertFunc('tan(')">tan</button>
+      <button class="btn sci" onclick="insertFunc('log(')">log</button>
+      <button class="btn sci" onclick="insertFunc('ln(')">ln</button>
+
+      <!-- Row 2: Scientific -->
+      <button class="btn sci" onclick="insertText('π')">π</button>
+      <button class="btn sci" onclick="insertText('e')">e</button>
+      <button class="btn sci" onclick="insertFunc('√(')">√</button>
+      <button class="btn sci" onclick="insertText('^')">x<sup>y</sup></button>
+      <button class="btn sci" onclick="insertText('²')">x²</button>
+
+      <!-- Row 3: Scientific -->
+      <button class="btn sci" onclick="insertFunc('1/(')">1/x</button>
+      <button class="btn sci" onclick="insertText('!')">n!</button>
+      <button class="btn sci" onclick="insertText('(')">(</button>
+      <button class="btn sci" onclick="insertText(')')">)</button>
+      <button class="btn sci" onclick="insertText('%')">%</button>
+
+      <!-- Row 4: Clear / Operators -->
+      <button class="btn action" onclick="clearAll()">AC</button>
+      <button class="btn action" onclick="backspace()">⌫</button>
+      <button class="btn action" onclick="toggleSign()">±</button>
+      <button class="btn operator" onclick="insertText('÷')">÷</button>
+
+      <!-- Row 5 -->
+      <button class="btn num" onclick="insertText('7')">7</button>
+      <button class="btn num" onclick="insertText('8')">8</button>
+      <button class="btn num" onclick="insertText('9')">9</button>
+      <button class="btn operator" onclick="insertText('×')">×</button>
+
+      <!-- Row 6 -->
+      <button class="btn num" onclick="insertText('4')">4</button>
+      <button class="btn num" onclick="insertText('5')">5</button>
+      <button class="btn num" onclick="insertText('6')">6</button>
+      <button class="btn operator" onclick="insertText('−')">−</button>
+
+      <!-- Row 7 -->
+      <button class="btn num" onclick="insertText('1')">1</button>
+      <button class="btn num" onclick="insertText('2')">2</button>
+      <button class="btn num" onclick="insertText('3')">3</button>
+      <button class="btn operator" onclick="insertText('+')">+</button>
+
+      <!-- Row 8 -->
+      <button class="btn num zero" onclick="insertText('0')">0</button>
+      <button class="btn num" onclick="insertText('.')">.</button>
+      <button class="btn equals" onclick="calculate()">=</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
